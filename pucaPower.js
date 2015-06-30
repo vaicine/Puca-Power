@@ -440,7 +440,7 @@ var pucaPower = {
                 };
 
             }
-            
+
             // Now that we're certain the entry exists, update the data
             this.memberData[memberID].cardQty++;
             this.memberData[memberID].totalCardPts += cardPts;
@@ -1138,4 +1138,12 @@ var pucaPower = {
 
         return this;
     }
-}.setup();
+}
+
+if (document.readyState === "complete") {
+  pucaPower.setup();
+} else {
+  window.addEventListener('load', function() {
+    pucaPower.setup();
+  }, false);
+}
